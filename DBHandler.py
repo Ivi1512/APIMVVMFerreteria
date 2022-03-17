@@ -13,10 +13,15 @@ class DBHandler(object):
 
    
     def conectar(self):
-        connection_url = 'mongodb+srv://Ivan:1234@cluster0.lwsix.mongodb.net/tienda?retryWrites=true&w=majority'
-        client = MongoClient(connection_url)
-        db = client.get_database('tienda')
-        SampleTable = db.SampleTable
+        client = MongoClient(
+            host='infsalinas.sytes.net:10450',
+            serverSelectionTimeOutMS=3000,
+            username='2dam09',
+            password='50563624X',
+            authSource='2dam09'
+        )
+
+        db = client.get_database('2dam09')
         return db
 
     
